@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 306 Switch Proxy responses
@@ -27,5 +28,5 @@ final class Status306 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Switch Proxy';
+	protected $reason = HttpStatus::TEXT_306;
 }

@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 417 Expectation Failed responses
@@ -27,5 +28,5 @@ final class Status417 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Expectation Failed';
+	protected $reason = HttpStatus::TEXT_417;
 }

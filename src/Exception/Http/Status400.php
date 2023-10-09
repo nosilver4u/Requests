@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 400 Bad Request responses
@@ -27,5 +28,5 @@ final class Status400 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Bad Request';
+	protected $reason = HttpStatus::TEXT_400;
 }

@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 403 Forbidden responses
@@ -27,5 +28,5 @@ final class Status403 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Forbidden';
+	protected $reason = HttpStatus::TEXT_403;
 }

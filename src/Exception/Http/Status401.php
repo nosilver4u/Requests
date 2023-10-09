@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 401 Unauthorized responses
@@ -27,5 +28,5 @@ final class Status401 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Unauthorized';
+	protected $reason = HttpStatus::TEXT_401;
 }

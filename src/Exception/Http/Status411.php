@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 411 Length Required responses
@@ -27,5 +28,5 @@ final class Status411 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Length Required';
+	protected $reason = HttpStatus::TEXT_411;
 }

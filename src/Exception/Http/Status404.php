@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 404 Not Found responses
@@ -27,5 +28,5 @@ final class Status404 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Not Found';
+	protected $reason = HttpStatus::TEXT_404;
 }

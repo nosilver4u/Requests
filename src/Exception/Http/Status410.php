@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 410 Gone responses
@@ -27,5 +28,5 @@ final class Status410 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Gone';
+	protected $reason = HttpStatus::TEXT_410;
 }

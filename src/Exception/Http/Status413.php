@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 413 Request Entity Too Large responses
@@ -27,5 +28,5 @@ final class Status413 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Request Entity Too Large';
+	protected $reason = HttpStatus::TEXT_413;
 }

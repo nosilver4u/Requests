@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 407 Proxy Authentication Required responses
@@ -27,5 +28,5 @@ final class Status407 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Proxy Authentication Required';
+	protected $reason = HttpStatus::TEXT_407;
 }

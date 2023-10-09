@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 415 Unsupported Media Type responses
@@ -27,5 +28,5 @@ final class Status415 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Unsupported Media Type';
+	protected $reason = HttpStatus::TEXT_415;
 }

@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 501 Not Implemented responses
@@ -27,5 +28,5 @@ final class Status501 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Not Implemented';
+	protected $reason = HttpStatus::TEXT_501;
 }

@@ -8,6 +8,7 @@
 namespace WpOrg\Requests\Exception\Http;
 
 use WpOrg\Requests\Exception\Http;
+use WpOrg\Requests\Utility\HttpStatus;
 
 /**
  * Exception for 402 Payment Required responses
@@ -27,5 +28,5 @@ final class Status402 extends Http {
 	 *
 	 * @var string
 	 */
-	protected $reason = 'Payment Required';
+	protected $reason = HttpStatus::TEXT_402;
 }
