@@ -82,7 +82,7 @@ class Cookie {
 	 * @throws \WpOrg\Requests\Exception\InvalidArgument When the passed $reference_time argument is not an integer or null.
 	 */
 	public function __construct($name, $value, $attributes = [], $flags = [], $reference_time = null) {
-		if (InputValidator::is_valid_rfc2616_token($name) === false) {
+		if ($name !== '' && InputValidator::is_valid_rfc2616_token($name) === false) {
 			throw InvalidArgument::create(1, '$name', 'integer|string and conform to RFC 2616', gettype($name));
 		}
 
@@ -439,7 +439,11 @@ class Cookie {
 			throw InvalidArgument::create(1, '$cookie_header', 'string', gettype($cookie_header));
 		}
 
-		if (InputValidator::is_valid_rfc2616_token($name) === false) {
+		if (is_string($name)) {
+			$name = trim($name);
+		}
+
+		if ($name !== '' && InputValidator::is_valid_rfc2616_token($name) === false) {
 			throw InvalidArgument::create(2, '$name', 'integer|string and conform to RFC 2616', gettype($name));
 		}
 
@@ -462,6 +466,10 @@ class Cookie {
 
 		$name  = trim($name);
 		$value = trim($value);
+
+		if ($name !== '' && InputValidator::is_valid_rfc2616_token($name) === false) {
+			throw InvalidArgument::create(2, '$name', 'integer|string and conform to RFC 2616', gettype($name));
+		}
 
 		// Attribute keys are handled case-insensitively
 		$attributes = new CaseInsensitiveDictionary();
