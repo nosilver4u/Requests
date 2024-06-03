@@ -35,7 +35,9 @@ final class ConstructorTest extends TestCase {
 	 * @return array
 	 */
 	public static function dataInvalidName() {
-		return TypeProviderHelper::getAllExcept(TypeProviderHelper::GROUP_INT, TypeProviderHelper::GROUP_STRING);
+		$data = TypeProviderHelper::getAllExcept(TypeProviderHelper::GROUP_INT, TypeProviderHelper::GROUP_STRING);
+		$data['Valid string, but not a valid RFC 2616 token'] = ["some\ntext\rwith\tcontrol\echaracters\fin\vit"];
+		return $data;
 	}
 
 	/**
